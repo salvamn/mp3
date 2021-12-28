@@ -36,10 +36,6 @@ btn_stop = Button(ventana, image=imagen_stop, command=detener_cancion)
 btn_stop.place(x=135, y=20)
 
 
-
-
-
 if __name__ == "__main__":
     ventana.mainloop()
-
     detener_reproductor()

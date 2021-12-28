@@ -17,7 +17,7 @@ for archivo in os.listdir(ruta_clasica_windows):
 
 
 # Puedes agregar otras extensiones si lo necesitas
-lista_canciones = [cancion for cancion in os.listdir(ruta_clasica_windows) if cancion.lower().endswith(".MP3") or cancion.endswith(".mp3")]
+lista_canciones = [cancion for cancion in os.listdir(ruta_clasica_windows) if cancion.lower().endswith(".mp3")]
 
 def canciones() -> Union[str, list]:
     """Esta funcion retornara una ruta y una lista de canciones."""

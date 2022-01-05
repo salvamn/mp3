@@ -2,7 +2,7 @@
 
 Reproductor de música con las funcionalidades de: Reproducir canción seleccionada, pausar, des pausar, anterior canción, siguiente canción, detener música y subir volumen.
 
-Para obtener la música el programa entra en el directorio `Música` con la librería `os`, luego de obtener el contenido de esa carpeta con un `for` se recorrerá la el directorio y cada archivo con extensión `.mp3` se agregaran una lista.
+Para obtener la música el programa entra en el directorio `Música` con la librería `os`, luego de obtener el contenido de ese directorio con un `for` se recorrerá el directorio con la intención de buscar archvos con extensión `.mp3` para agregarlos a una lista.
 
 ![image](https://user-images.githubusercontent.com/61121429/148300886-d77bd554-c7fe-45fa-ad6f-d6eebfb41150.png)
 

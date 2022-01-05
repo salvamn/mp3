@@ -1,5 +1,6 @@
-from tkinter import messagebox
+from tkinter import EXCEPTION, messagebox
 import pygame
+from cl_cancion import Cancion
 
 from musica import canciones
 
@@ -12,28 +13,50 @@ ruta, lista_canciones = canciones()
 def iniciar_mixer():
     pygame.mixer.init()
 
-def reproducir_cancion():
+
+
+def reproducir_cancion_2(id_cancion: int):
     global cancion
+    cancion = id_cancion
 
-    iniciar_mixer()
+    iniciar_mixer() # inicializamos mixer
+    
+    nombre_cancion = lista_canciones[id_cancion].nombre
 
-    try:
-        pygame.mixer.music.load(r"{}\{}".format(ruta, lista_canciones[cancion]))
-    except IndexError:
-        cancion = 0
-        reproducir_cancion()
+    if nombre_cancion != "":
 
-    pygame.mixer.music.play()
+        try:
+            pygame.mixer.music.load(r"{}\{}".format(ruta, nombre_cancion))
+            pygame.mixer.music.set_volume(1.0)
+            pygame.mixer.music.play()
+        except Exception:
+            messagebox.showerror("Error", "Selecione una cancion")
+            return
+
+
     
 def siguiente_cancion():
     global cancion
     cancion += 1
-    reproducir_cancion()
+
+    try: 
+        reproducir_cancion_2(cancion)
+    except IndexError:
+        cancion = 0
+        reproducir_cancion_2(cancion)
+
+
 
 def cancion_anterior():
     global cancion
     cancion -= 1
-    reproducir_cancion()
+
+    try:
+        reproducir_cancion_2(cancion)
+    except IndexError:
+        cancion = len(lista_canciones)
+        reproducir_cancion_2(cancion - 1)
+
 
 def manejar_volumen(vol):
     verificar_inicializador = pygame.mixer.get_init()
@@ -64,6 +87,7 @@ def manejar_volumen(vol):
     elif int(vol) == 100:
         pygame.mixer.music.set_volume(1.0)
 
+
 def detener_cancion():
     verificar_inicializador = pygame.mixer.get_init()
 
@@ -74,6 +98,7 @@ def detener_cancion():
     pygame.mixer.quit()
     messagebox.showinfo("Detener", "Se detuvo la cancion")
 
+
 def detener_reproductor():
     verificar_inicializador = pygame.mixer.get_init()
 
@@ -83,11 +108,16 @@ def detener_reproductor():
     pygame.mixer.stop()
     pygame.mixer.quit()
 
+
 def pausar_cancion():
     pygame.mixer.music.pause()
 
 def despausar():
     pygame.mixer.music.unpause()
+
+
+
+
 
 def pausar_despausar():
     verificar_init = pygame.mixer.get_init()

@@ -15,3 +15,11 @@ Para obtener la música el programa entra en el directorio `Música` con la libr
 [YouTube](https://youtu.be/xwOcqhUjTZY)
 
 ![gif reproductor](https://user-images.githubusercontent.com/61121429/148301366-5ff2dc57-d1a7-4210-abfe-51322019f862.gif)
+
+
+<hr>
+### Tareas
+
+- [X] Funcionalidades Basicas.
+- [ ] Barra de progreso indicando el minuto/segundo.
+- [ ] Indicar que cancion esta sonando.

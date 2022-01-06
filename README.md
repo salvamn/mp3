@@ -24,3 +24,4 @@ Para obtener la música el programa entra en el directorio `Música` con la libr
 - [X] Funcionalidades Basicas.
 - [ ] Barra de progreso indicando el minuto/segundo.
 - [ ] Indicar que cancion esta sonando.
+- [ ] Reprodución automatica

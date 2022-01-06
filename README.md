@@ -4,6 +4,8 @@ Reproductor de música con las funcionalidades de: Reproducir canción seleccion
 
 Para obtener la música el programa entra en el directorio `Música` con la librería `os`, luego de obtener el contenido de ese directorio con un `for` se recorrerá el directorio con la intención de buscar archvos con extensión `.mp3` para agregarlos a una lista.
 
+( si tienes otro sistema operativo tendras que editar este [script](https://github.com/salvamn/mp3/blob/master/musica.py) )
+
 ![image](https://user-images.githubusercontent.com/61121429/148300886-d77bd554-c7fe-45fa-ad6f-d6eebfb41150.png)
 
 ### Imagen de la Interfaz
